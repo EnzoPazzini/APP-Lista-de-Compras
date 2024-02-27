@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Compras</h1>
+        <input type="text" id="item" class="form-control mb-2">
+        <button class="btn btn-primary" onclick="addItem()">Adicionar Item</button>
+        <ul id="item-list" class="list-group mt-2"></ul>
+    </div>
+
+    <script>
+        function addItem() {
+            var item = document.getElementById('item').value;
+            var itemList = document.getElementById('item-list');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(item));
+            li.className = 'list-group-item';
+            itemList.appendChild(li);
+            document.getElementById('item').value = '';
+        }
+    </script>
+</body>
+</html>
